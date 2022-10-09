@@ -21,7 +21,7 @@ input[type='radio'] {
 }
 
 body {
-    background-color: #a5846a;
+    background-color: #B399D4;
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +36,7 @@ body {
     top: 1rem;
     right: 1rem;
     color: #fff;
-    background-color: #9ec862;
+    background-color: #9FD4A3;
     border: none;
     border-radius: 3px;
     padding: 0.5rem 1rem;
@@ -52,7 +52,7 @@ body {
 }
 
 .note .tools {
-    background-color: #9ec862;
+    background-color: #9FD4A3;
     display: flex;
     justify-content: flex-end;
     padding: 0.5rem;
