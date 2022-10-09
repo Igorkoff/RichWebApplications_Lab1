@@ -8,12 +8,12 @@
     accent-color: #fff740;
 }
 
-#pink {
-    accent-color: #ff7eb9;
-}
-
 #blue {
     accent-color: #1ba8b1;
+}
+
+#pink {
+    accent-color: #ff7eb9;
 }
 
 input[type='radio'] {
@@ -73,12 +73,15 @@ body {
 
 .note textarea {
     outline: none;
-    background-color: #fff740;
     font-family: inherit;
     font-size: 1.2rem;
     border: none;
     height: 400px;
     width: 100%;
+    padding: 20px;
+}
+
+.main {
     padding: 20px;
 }
 

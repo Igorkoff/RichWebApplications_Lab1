@@ -7,14 +7,6 @@ function addNewNote(text = '') {
     note.classList.add('note')
     note.innerHTML = `
     <div class="tools">
-        <div class="colors">
-            <input type="radio" id="yellow" name="color" value="Yellow" checked>
-            <label for="yellow">Yellow</label>
-            <input type="radio" id="blue" name="color" value="Blue">
-            <label for="blue">Blue</label>
-            <input type="radio" id="pink" name="color" value="Pink">
-            <label for="pink">Pink</label>
-        </div>
         <button class="edit"><i class="fa fa-pencil"></i></button>
         <button class="delete"><i class="fa fa-trash"></i></button>
     </div>
@@ -28,8 +20,22 @@ function addNewNote(text = '') {
     const main = note.querySelector('.main')
     const textArea = note.querySelector('textarea')
 
+    textArea.value = text
+    main.innerHTML = text
+
     deleteBtn.addEventListener('click', () => {
         note.remove()
+    })
+
+    editBtn.addEventListener('click', () => {
+        main.classList.toggle('hidden')
+        textArea.classList.toggle('hidden')
+    })
+
+    textArea.addEventListener('input', (e) => {
+        const { value } = e.target
+
+        main.innerHTML = value
     })
 
     document.body.appendChild(note)
