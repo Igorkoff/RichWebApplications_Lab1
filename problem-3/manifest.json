@@ -1,12 +1,21 @@
 {
     "manifest_version": 3,
-    "name": "catsAreTheBest",
+    "name": "Glory to Ukraine",
     "version": "1.0.0",
     "content_scripts": [
         {
         "matches": ["<all_urls>"],
-        "js": ["Content.js"]
+        "js": ["Content.js"],
+        "css": ["Style.css"]
         }
-    ] 
-    
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [ "himars.jpeg" ],
+            "matches": ["<all_urls>"]
+        }
+    ]
 }

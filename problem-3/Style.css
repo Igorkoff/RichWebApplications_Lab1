@@ -1,0 +1,22 @@
+.himars_extension {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 480px;
+    height: 360px;
+    z-index: 10000;
+    background-size: cover;
+    background-image: url("chrome-extension://ndhofhilaaojgejjobepkjfhhfjckkec/himars.jpeg");
+}
+
+.clock_extension {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10000;
+    font-size: 32px;   
+}
+
+.hide {
+    display: none;
+}

@@ -1,40 +1,21 @@
-// add a picture of HIMARS in a random spot of the website
+// not cat images
 
-const img = document.createElement("img");
-
-//img.src = chrome.runtime.getURL("https://i.redd.it/rm9l33moxpi91.jpg");
-img.src = "https://i.redd.it/rm9l33moxpi91.jpg";
-document.body.appendChild(img);
-
-var x = Math.random() * 1000;
-x = Math.round(x);
-    
-var y = Math.random() * 500;
-y = Math.round(y);
-
-img.style.position = 'absolute';
-img.style.left = x + 'px';
-img.style.top = y + 'px';
-
-// cats
-
-let catsImages = [
-    "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png",
-    "https://e3.365dm.com/21/03/768x432/skynews-cats-missing-microchip_5315182.jpg?20210323142004",
-    "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528",
-    "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc3836660-7846-11eb-80c3-8cc375faed89.jpg?crop=5729%2C3222%2C187%2C805&resize=1200",
-	"https://lh3.googleusercontent.com/pw/AL9nZEXYJlrVkYoKIkpx07_3F4HOiTiOheaoaiRAcwrUg3C613-jkzEubJ3k8Z9fDjG5IfVqCzorphZ00vp6mIyB79GtCsoyV69xXe9cqrA0zglgrcvYhH2UP4cDR88WTm1AmuyCxQHAWCB5JzKD7eD94dtNZA=w690-h920-no"
+let warImages = [
+    "https://pbs.twimg.com/media/FYTZCjsUUAEguWS?format=jpg&name=large",
+    "https://upload.wikimedia.org/wikipedia/commons/0/0b/Ghost_of_Kyiv_Art.jpg",
+    "https://www.euractiv.com/wp-content/uploads/sites/2/2022/10/h_57976935-1.jpg",
+    "https://ichef.bbci.co.uk/news/976/cpsprodpb/1400A/production/_124203918__124200908_c759bd1f-254f-4106-8a3f-0b52d7fe1403-1.jpg"
 ];
 
 const imgs = document.getElementsByTagName("img");
 for(let i = 0; i < imgs.length; i++) {
-    const randomImg = Math.floor(Math.random() * catsImages.length)
-    imgs[i].src = catsImages[randomImg]
+    const randomImg = Math.floor(Math.random() * warImages.length)
+    imgs[i].src = warImages[randomImg]
 }
 
 const headers = document.getElementsByTagName("h1");
 for (let i = 0; i < headers.length; i++){
-    headers[i].innerText = "Cats are awesome.";
+    headers[i].innerText = "Glory to the Heroes.";
 }
 
 // replace all mentions of Putin with Poopin
@@ -57,3 +38,55 @@ setInterval(function() {
         document.body.style.opacity = visibility ;
     }
 }, 2000);
+
+// add a clock that can hide if needed
+
+const clock = document.createElement('div')
+clock.classList.add('clock_extension', 'hide')
+
+setInterval(updateClock, 1000);
+updateClock()
+
+document.body.append(clock)
+
+document.addEventListener('keydown', event => {
+    if (event.code === 'Enter') {
+        clock.classList.toggle('hide')
+    }
+})
+
+function updateClock() {
+    const date = new Date()
+    const time = new Intl.DateTimeFormat('ru-Ru', {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    }).format(date)
+
+    clock.innerText = time
+}
+
+// add a picture of HIMARS
+
+let counter = 0
+
+const himars = document.createElement("div")
+himars.classList.add('himars_extension')
+
+document.body.append(himars)
+
+himars.addEventListener('click', event => {
+    if (counter === 5) {
+        alert("It's Himars O'Clock")
+    }
+    var x = Math.random() * 1000;
+    x = Math.round(x);
+    
+    var y = Math.random() * 500;
+    y = Math.round(y);
+    
+    himars.style.left = x + 'px';
+    himars.style.top = y + 'px';
+
+    counter++
+})
